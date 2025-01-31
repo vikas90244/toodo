@@ -1,0 +1,254 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Red Hat Display", serif;
+}
+  
+body {
+    color: $bg-color;
+    background: rgba(255, 255, 255, 0.998);
+   
+}
+  
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2rem;
+    border-bottom: 1px solid rgb(215, 215, 215);
+}
+.header-search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-grow: 1;
+    margin-inline: 2rem;
+    height: 4rem;
+    input {
+       height: 3rem;
+       width: 100%;
+       padding: 0 1rem;
+       color:gray;
+       border-radius: 1.2rem;
+       border: 1px solid rgb(215, 215, 215);
+      font-size: 1rem;
+       outline: none;
+    }
+    button {
+        position: absolute;
+        border: none;
+        right: 0;
+        cursor: pointer;
+        width: 3.4rem;
+        height: 3rem;
+        border-radius: 0 1.2rem 1.2rem 0;
+        background-color: rgba(186, 180, 180, 0.772);
+        border-left: 1px solid rgb(215, 215, 215);
+       i{
+        font-size: 1.5rem;
+        color: rgb(83, 83, 83);
+    }
+    }
+}
+
+@media (min-width: 820px) and (max-width: 1023px) {
+    .header-search-bar {
+        margin-inline: 8rem;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 819px) {
+    .header-search-bar {
+        margin-inline: 2rem;
+    }
+}
+
+
+@media (min-width: 1024px) and (max-width: 1239px) {
+    .header-search-bar {
+        margin-inline: 10
+        rem;
+    }
+}
+
+@media (min-width: 1240px) {
+    .header-search-bar {
+        margin-inline: 18rem;
+    }
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    font-size: 1.1rem;
+
+    div > a {
+        text-decoration: none;
+        color: $bg-color;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: rgb(54, 155, 238);
+        }
+    }
+}
+  
+.user-img {
+    position: relative;
+}
+  
+.user-img img {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+  
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 10; 
+    display: none;
+    background-color: white;
+    border-radius: 4%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.dropdown-menu.active {
+    display: block;
+}
+  
+.dropdown-menu ul {
+    list-style-type: none;
+    padding:0.8rem 0.5rem;
+    margin: 0;
+}
+  
+.dropdown-menu li {
+    padding: 0.2rem 0rem;
+}
+
+.dropdown-menu li a {
+    font-size: 1.1rem;
+    color: $bg-color;
+    text-decoration: none;
+    display: block;
+    padding: 0.1rem 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+   color: rgb(54, 155, 238);
+}
+
+
+
+.task-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 15px;
+    font-weight: 550;
+    background-color: rgb(47, 157, 247);
+    border: 1px solid rgb(47, 157, 247);
+    color: rgb(255, 255, 255);
+    border-radius: 0.2rem;
+    margin-inline: 2rem;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    box-shadow: 0 -1px 1px rgba(0, 0, 0, .04), 0 2px 2px rgba(0, 0, 0, .25);
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.task-btn:hover {
+    cursor: pointer;
+    color: rgb(211, 235, 254);
+    background-color: rgb(45, 139, 215);
+    
+
+}
+
+.task-form {
+    padding-top: 2rem;
+    margin-inline: 3rem;
+    margin-block: 2rem;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30rem;
+    gap: 1rem;
+    border-radius: 20px 0 20px 0;
+    box-shadow: 0.4rem 0.8rem 0.8rem rgb(234, 236, 239);
+    
+}
+.task-form .entryarea{
+    width: 100%;
+    padding-inline: 0.5rem;
+    position: relative;
+
+}
+.task-form .entryarea input{
+    width: 100%; 
+    color:rgb(122, 119, 119);
+    padding: 0.4rem 1.4rem; 
+    height: 2.8rem;
+    font-size: 1.2rem;
+    border: 0.5px solid  rgb(198, 198, 198);
+    border-radius: 4px;
+    outline: none;
+    z-index: 10;
+}
+
+.task-form .entryarea label{
+    margin: 0rem 1rem;
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(173, 167, 167);
+   transition: 0.3s ease;
+}
+.task-form .entryarea input:focus+label,
+.task-form .entryarea input:valid+label {
+    top: 0;
+    color: rgb(100, 102, 103);
+    font-size: 1.2rem;
+    background-color: white;
+}
+
+
+.check-save-btn {
+    display: flex;
+    justify-items: center;
+    padding: 0.5rem 0.5rem;
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    img{
+        width: 3rem;
+        height: 3rem;
+    }
+    transition: transform 0.5s ease;
+}
+
+.check-save-btn:hover {
+   transform: scale(1.2);
+}
+.task-form.active {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.container {
+    margin: auto;
+    width: 100%;
+    padding: 1rem 4rem;
+}

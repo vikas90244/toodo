@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Too-do App </title>
+    <link rel="stylesheet" href="src/styles/css/main.css">
+</head>
+<body>
+  <nav class="header container">
+    <div class="logo">
+        Too-do
+    </div>
+    <div class="header-search-bar">
+      <input type="text" placeholder="Search...">
+      <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <div class="right-nav">
+        <div><a class="hover-anchor" href="#">Tasks</a></div>
+        <div><a class="hover-anchor" href="#">Feed</a></div>
+        <div class="user-img" id="profile-img">
+            <img src="/user.png" alt="user">
+            <div class="dropdown-menu" id="dropdownMenu">
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </nav>
+
+  <section class="container">
+    <button id="task-btn" class="task-btn"><i class="fa-solid fa-plus"></i> Add Task </button>
+    <form id="task-form" class="task-form">
+      <div class="entryarea">
+        <input type="text" name="" required>
+        <label class="label-line">Enter Task </label>
+      </div>
+      <button class="check-save-btn">
+        <img src="/checked.png" alt="">
+      </button>
+    </form>
+  </section>
+
+  <section class="container">
+    <div class="task-list-title">TaskList</div>
+    <div>
+      <div>recents</div>
+      <div>upcoming</div>
+      <div>completed</div>
+    </div>
+  </section>
+</body>
+<script type="module" src="src/scripts/main.ts"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</html>
